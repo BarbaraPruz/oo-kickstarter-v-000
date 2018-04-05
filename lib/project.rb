@@ -8,8 +8,8 @@ class Project
   end
 
   def add_backer (backer)
+    backer.add_project(self)  # side effect is that this verifies backer is a Backer so we know our backers array will be valid
     @backers.index(backer) || @backers << backer
-    backer.add_project(self)
   end
 
 end
